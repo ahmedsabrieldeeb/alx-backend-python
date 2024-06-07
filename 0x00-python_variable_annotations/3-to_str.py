@@ -10,7 +10,7 @@ def to_str(n: float) -> str:
 
     Args:
         n: float
-    
+
     Returns:
         The floor of n
     """
