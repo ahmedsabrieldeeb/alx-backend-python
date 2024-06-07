@@ -5,7 +5,7 @@ make_multiplier module
 from typing import Callable
 
 
-def make_multiplier(multiplir: float) -> Callable[[float], float]:
+def make_multiplier(multiplier: float) -> Callable[[float], float]:
     """
     This function takes a float as argument and returns a function that
     takes a float as argument
@@ -18,6 +18,6 @@ def make_multiplier(multiplir: float) -> Callable[[float], float]:
         Callable[[float], float]: function that does the action
     """
     def multiply(x: float) -> float:
-        return x * multiplir
+        return x * multiplier
 
     return multiply
