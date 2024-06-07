@@ -21,6 +21,3 @@ def zoom_array(lst: Tuple, factor: int = 2) -> List:
         for i in range(factor)
     ]
     return zoomed_in
-
-
-print(zoom_array.__annotations__)
