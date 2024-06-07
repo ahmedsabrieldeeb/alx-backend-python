@@ -2,7 +2,7 @@
 """
 element_length module
 """
-from typing import List,Iterable, Tuple, Sequence
+from typing import List, Iterable, Tuple, Sequence
 
 
 def element_length(lst: Iterable[Sequence]) -> List[Tuple[Sequence, int]]:
