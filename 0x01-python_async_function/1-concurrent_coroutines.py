@@ -2,12 +2,13 @@
 """The basics of async"""
 
 import asyncio
+from typing import List
 
 
 wait_random = __import__('0-basic_async_syntax').wait_random
 
 
-async def wait_n(n: int, max_delay: int) -> float:
+async def wait_n(n: int, max_delay: int) -> List[float]:
     """
     Waits for a random delay between 0 and `max_delay` seconds and returns it
 
@@ -19,6 +20,6 @@ async def wait_n(n: int, max_delay: int) -> float:
         ret (float): The list of all the delays
     """
     delays = [wait_random(max_delay) for _ in range(n)]
-    ret = await asyncio.gather(*delays)
-    ret.sort()
+    # avoiding sort() because it will be already sorted
+    ret = [await delay for delay in asyncio.as_completed(delays)]
     return ret
